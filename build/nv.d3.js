@@ -1,9 +1,14 @@
-/* nvd3 version 1.7.1(https://github.com/novus/nvd3) 2015-02-05 */
+/* nvd3 version 1.7.1(https://github.com/novus/nvd3) 2016-07-29 */
 (function(){
 
 // set up main nv object on window
 var nv = window.nv || {};
 window.nv = nv;
+
+// Node/CommonJS - require D3
+if (typeof(module) !== 'undefined' && typeof(exports) !== 'undefined' && typeof(d3) == 'undefined') {
+    d3 = require('d3');
+}
 
 // the major global objects under the nv namespace
 nv.dev = false; //set false when in production
@@ -120,7 +125,8 @@ nv.addGraph = function(obj) {
     if (!nv.render.active) {
         nv.render();
     }
-};/* Utility class to handle creation of an interactive layer.
+};
+/* Utility class to handle creation of an interactive layer.
  This places a rectangle on top of the chart. When you mouse move over it, it sends a dispatch
  containing the X-coordinate. It can also render a vertical line where the mouse is located.
 
@@ -476,7 +482,6 @@ nv.nearestValueIndex = function (values, searchVal, threshold) {
             theadEnter.append("tr")
                 .append("td")
                 .attr("colspan",3)
-                .append("strong")
                 .classed("x-value",true)
                 .html(headerFormatter(d.value));
 
@@ -9744,8 +9749,8 @@ nv.models.scatterChart = function() {
         , showYAxis    = true
         , rightAlignYAxis = false
         , tooltips     = true
-        , tooltipX     = function(key, x, y) { return '<strong>' + x + '</strong>' }
-        , tooltipY     = function(key, x, y) { return '<strong>' + y + '</strong>' }
+        , tooltipX     = function(key, x, y) { return '<div>' + x + '</div>' }
+        , tooltipY     = function(key, x, y) { return '<div>' + y + '</div>' }
         , tooltip      = function(key, x, y, date) { return '<h3>' + key + '</h3>'
             + '<p>' + date + '</p>' }
         , state = nv.utils.state()

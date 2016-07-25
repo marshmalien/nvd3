@@ -1,6 +1,7 @@
 {
   "name": "nvd3",
   "version": "1.7.1",
+  "main": "build/nv.d3.js",
   "devDependencies": {
     "grunt": "~0.4.1",
     "grunt-contrib-jshint": "~0.3.0",
@@ -19,5 +20,8 @@
     "karma-junit-reporter": "^0.2.2",
     "karma-spec-reporter": "0.0.13",
     "karma-coverage": "^0.2.6"
+  },
+  "dependencies": {
+    "d3": "~3.3.13"
   }
 }

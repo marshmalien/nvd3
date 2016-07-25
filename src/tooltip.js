@@ -78,7 +78,6 @@
             theadEnter.append("tr")
                 .append("td")
                 .attr("colspan",3)
-                .append("strong")
                 .classed("x-value",true)
                 .html(headerFormatter(d.value));
 
