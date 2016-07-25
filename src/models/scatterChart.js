@@ -27,8 +27,8 @@ nv.models.scatterChart = function() {
         , showYAxis    = true
         , rightAlignYAxis = false
         , tooltips     = true
-        , tooltipX     = function(key, x, y) { return '<strong>' + x + '</strong>' }
-        , tooltipY     = function(key, x, y) { return '<strong>' + y + '</strong>' }
+        , tooltipX     = function(key, x, y) { return '<div>' + x + '</div>' }
+        , tooltipY     = function(key, x, y) { return '<div>' + y + '</div>' }
         , tooltip      = function(key, x, y, date) { return '<h3>' + key + '</h3>'
             + '<p>' + date + '</p>' }
         , state = nv.utils.state()
