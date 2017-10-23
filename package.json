@@ -1,6 +1,6 @@
 {
   "name": "nvd3",
-  "version": "1.7.1",
+  "version": "1.8.0",
   "main": "build/nv.d3.js",
   "devDependencies": {
     "grunt": "~0.4.1",
